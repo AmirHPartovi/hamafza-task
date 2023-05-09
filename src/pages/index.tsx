@@ -1,12 +1,29 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import { Grid, Typography } from '@mui/material'
+import { Button, Grid, Typography } from '@mui/material'
 import MobileContainer from '../components/mobileContainer/MobileContainer'
 import Logo from '../../public/assets/photo/logo/Group.svg'
-const inter = Inter({ subsets: ['latin'] })
+import GoogleIcon from '../../public/assets/icons/Google-logo.svg'
+import AppleIcon from '../../public/assets/icons/Apple-logo.svg'
+import { ReactNode } from 'react'
 
+interface signingOptionType {
+  id:Number,
+  name:String,
+  icon:ReactNode
+}
 export default function Home() {
+  const signingOption : signingOptionType[] = [{
+    id:0,
+    name:'Google',
+    icon:<GoogleIcon/>,
+  },
+  {
+    id:1,
+    name:'Apple',
+    icon:<AppleIcon/>,
+  }]
   return (
     <>
       <Head>
@@ -55,7 +72,30 @@ export default function Home() {
                 height={'375px'}
                 mt={'32px'}
                 >
-                  <Typography>sdfwg</Typography>
+                  <Grid
+                  m={'24px'}>
+                      <Typography>
+                        Signin with
+                      </Typography>
+                      <Grid>
+                        
+                        <Button
+                          variant='outlined'
+                          sx={{
+                            width:'152px',
+                            height:'64px',
+                            color:'grey.300',
+                            borderRadius:'12px',
+                            padding:'0px',
+                            gap:'8px',
+                            textTransform:'none'
+                          }}>
+                              <GoogleIcon/>
+                              Google
+                        </Button>
+                        <Button>Apple</Button>
+                      </Grid>
+                  </Grid>
                 </Grid>
             </Grid>
 
