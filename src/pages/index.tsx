@@ -1,8 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import { Typography } from '@mui/material'
-
+import { Grid, Typography } from '@mui/material'
+import MobileContainer from '../components/mobileContainer/MobileContainer'
+import Logo from '../../public/assets/photo/logo/Group.svg'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -15,7 +16,50 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main >
-          <Typography variant='h3'>My Study Life</Typography>
+          <MobileContainer>
+            <Grid 
+            container 
+            display={'flex'}
+            flexDirection={'column'}
+            alignItems={'center'}
+            justifyContent={'center'}
+            width={'375px'}>
+                  <Grid item mt={'97px'}mb={'30px'}>
+                    {/* use @svgr/webpack config */}
+                    <Logo/>
+                    
+                      {/* <Image src={'/public/assets/photos/logo/Group.jpg'}
+                      alt=''
+                      width={113}
+                      height={113}/> */}
+                  </Grid>
+                    <Typography 
+                        variant='h3'>
+                            My Study Life
+                    </Typography>
+                    <Typography 
+                        color={'grey.100'}
+                        textAlign={'center'}
+                        fontSize={'1rem'}
+                        mx={'40px'}
+                        mt={'12px'}>
+                            Create a unique emotional story that describes better than words
+                    </Typography>
+                <Grid
+                item
+                container
+                bgcolor={'#fff'}
+                border={'1px solid'}
+                borderRadius={'24px'}
+                borderColor={'divider'}
+                height={'375px'}
+                mt={'32px'}
+                >
+                  <Typography>sdfwg</Typography>
+                </Grid>
+            </Grid>
+
+          </MobileContainer>
       </main>
     </>
   )
