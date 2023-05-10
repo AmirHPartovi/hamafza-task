@@ -1,19 +1,23 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import { Button, Grid, Typography } from '@mui/material'
+import { Button, Divider, Grid, TextField, Typography } from '@mui/material'
 import MobileContainer from '../components/mobileContainer/MobileContainer'
 import Logo from '../../public/assets/photo/logo/Group.svg'
 import GoogleIcon from '../../public/assets/icons/Google-logo.svg'
 import AppleIcon from '../../public/assets/icons/Apple-logo.svg'
-import { ReactNode } from 'react'
+import { ReactNode, useState } from 'react'
+import Link from 'next/link'
 
 interface signingOptionType {
-  id:Number,
+  id: any,
   name:String,
-  icon:ReactNode
+  icon:ReactNode,
 }
 export default function Home() {
+  const [user,setUser]=useState({
+    email:'',
+  })
   const signingOption : signingOptionType[] = [{
     id:0,
     name:'Google',
@@ -23,7 +27,14 @@ export default function Home() {
     id:1,
     name:'Apple',
     icon:<AppleIcon/>,
-  }]
+  },]
+  const handleChange=(e:any)=>{
+    e.preventDefault();
+    setUser({...user , [e.target.name]:e.target.value})
+  }
+  const handleSubmit =()=>{
+    //do something
+  }
   return (
     <>
       <Head>
@@ -40,7 +51,8 @@ export default function Home() {
             flexDirection={'column'}
             alignItems={'center'}
             justifyContent={'center'}
-            width={'375px'}>
+            width={'375px'}
+            >
                   <Grid item mt={'97px'}mb={'30px'}>
                     {/* use @svgr/webpack config */}
                     <Logo/>
@@ -71,31 +83,117 @@ export default function Home() {
                 borderColor={'divider'}
                 height={'375px'}
                 mt={'32px'}
+                pb={'12px'}
                 >
                   <Grid
-                  m={'24px'}>
-                      <Typography>
-                        Signin with
-                      </Typography>
-                      <Grid>
-                        
-                        <Button
-                          variant='outlined'
-                          sx={{
-                            width:'152px',
-                            height:'64px',
-                            color:'grey.300',
-                            borderRadius:'12px',
-                            padding:'0px',
-                            gap:'8px',
-                            textTransform:'none'
-                          }}>
-                              <GoogleIcon/>
-                              Google
-                        </Button>
-                        <Button>Apple</Button>
+                      container
+                      display={'flex'}
+                      m={'24px'}>
+                          <Typography>
+                            Signin with
+                          </Typography>
+                          <Grid
+                            item
+                            container
+                            display={'flex'}
+                            justifyContent={'space-between'}
+                            alignItems={'flex-start'}>
+                              {signingOption.map((item:signingOptionType) =>(
+                                  <Grid
+                                  key={item.id} 
+                                  item
+                                  >
+                                      <Button
+                                        variant='outlined'
+                                        sx={{
+                                          width:'152px',
+                                          height:'64px',
+                                          color:'grey.300',
+                                          borderRadius:'12px',
+                                          padding:'0px',
+                                          gap:'8px',
+                                          textTransform:'none'
+                                        }}>
+                                            {item.icon}
+                                            {item.name}
+                                      </Button>
+                                  </Grid>
+                              ))}
+                              
+                          </Grid>
                       </Grid>
-                  </Grid>
+                      <Grid
+                          container
+                          display={'flex'}
+                          justifyContent={'space-evenly'}
+                          alignItems={'center'}>
+                            <Grid
+                                item
+                                xs={4}
+                                bgcolor={'divider'}
+                                height={'1px'}>
+
+                            </Grid>
+                            <Grid
+                                item>
+                                  Or
+                                </Grid>
+                            <Grid
+                                item
+                                xs={4}
+                                bgcolor={'divider'}
+                                height={'1px'}>
+
+                            </Grid>
+                      </Grid>
+                      
+                      <Grid
+                        component={'form'}
+                        onSubmit={handleSubmit}
+                        item
+                        container
+                        display={'flex'}
+                        flexDirection={'column'}
+                        justifyContent={'center'}
+                        alignItems={'center'}
+                        gap={'16px'}
+                        mb={'16px'}>
+                          <Grid
+                          item>
+                            <TextField
+                              required
+                              name='email'
+                              value={user.email}          
+                              label="Email"
+                              variant="outlined"
+                              type='email'
+                              onChange={handleChange}
+                              sx={{
+                                width:'327px',
+                                height:'56px',
+                                
+                              }}
+                            />
+                          </Grid>
+                          <Grid
+                          item>
+                              <Link href={'/start'}>
+                                <Button
+                                  variant='contained'
+                                  sx={{
+                                    width:'327px',
+                                    height:'56px',
+                                    textTransform:'none',
+                                    type:'submit',
+                                  }}>
+                                    Continue
+                                </Button>
+                              </Link>
+                          </Grid>
+                      </Grid>
+                    
+                        
+                      
                 </Grid>
             </Grid>
 
