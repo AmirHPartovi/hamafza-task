@@ -14,6 +14,14 @@ const theme = createTheme({
         success:{
             main:'#26BFBF',
         },
+        info:{
+            main:'#1e90fe',
+            100:'#FDD563',
+            200:'#8BE38B',
+            300:'#B3B4F7',
+            400:'#C4D7FF',
+            500:'#E48FFF',
+        },
         grey:{
             50:'#CCCCCC',
             100:'#585A66',
