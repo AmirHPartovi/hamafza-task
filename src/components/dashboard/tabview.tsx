@@ -48,7 +48,7 @@ const tabview = ({page,setPage}: Props) => {
     <MobileContainer>
         
                     <Tabs
-                    
+                    value={page}
                     sx={{
                         position:'absolute',
                         bottom:0,
@@ -72,7 +72,7 @@ const tabview = ({page,setPage}: Props) => {
                                 px:'0px',
                                 ':active':{
                                     color:'primary',
-                                    
+
                                 }
                             }}
                             />
