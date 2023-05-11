@@ -74,7 +74,7 @@ const handleLevel =(id:Number)=>{
             {level.map((item:any) =>(
                 <Grid
                 key={item.id}>
-                  <Link href={''}>
+                  <Link href={'/dashboard'}>
                   <Button
                     variant='outlined'
                     onClick={()=>handleLevel(item.id)}
@@ -101,7 +101,7 @@ const handleLevel =(id:Number)=>{
             alignSelf={'end'}
             mx={'40px'}
             item>
-              <Link href={''}>
+              <Link href={'/dashboard'}>
                 <Button>
                   Skip
                 </Button>
