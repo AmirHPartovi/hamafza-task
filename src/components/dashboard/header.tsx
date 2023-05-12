@@ -8,7 +8,7 @@ type Props = {
     page:Number,
 }
 
-const header = ({page}: Props) => {
+const Header = ({page}: Props) => {
    const [label,setLabel]=useState<String>('')
    useEffect(()=>{
         const newItem = tabs[+page]
@@ -67,4 +67,4 @@ const header = ({page}: Props) => {
   )
 }
 
-export default header
+export default Header

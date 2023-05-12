@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 type Props = {}
 
-const start = (props: Props) => {
+const Start = (props: Props) => {
   return (
     <MobileContainer>
     <Grid 
@@ -77,4 +77,4 @@ const start = (props: Props) => {
   )
 }
 
-export default start
+export default Start

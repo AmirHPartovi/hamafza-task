@@ -2,10 +2,10 @@ import React from 'react'
 
 type Props = {}
 
-const serch = (props: Props) => {
+const Search = (props: Props) => {
   return (
     <div>search component rendered</div>
   )
 }
 
-export default serch
+export default Search

@@ -9,7 +9,7 @@ import Notification from '../components/dashboard/dashComponents/notification'
 import Search from '../components/dashboard/dashComponents/serch'
 type Props = {}
 
-const dashboard = (props: Props) => {
+const Dashboard = (props: Props) => {
     const [page, setPage] = useState<Number>(0);
     const dashChildren=[
         {
@@ -47,4 +47,4 @@ const dashboard = (props: Props) => {
   )
 }
 
-export default dashboard
+export default Dashboard

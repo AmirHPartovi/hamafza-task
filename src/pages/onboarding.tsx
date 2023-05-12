@@ -9,7 +9,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 type Props = {}
 
-const onboarding = (props: Props) => {
+const Onboarding = (props: Props) => {
   const[studyLevel,setStudyLevel]=useState<Number>(0)
 
   const level = [
@@ -112,4 +112,4 @@ const handleLevel =(id:Number)=>{
   )
 }
 
-export default onboarding
+export default Onboarding

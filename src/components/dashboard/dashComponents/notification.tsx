@@ -2,10 +2,10 @@ import React from 'react'
 
 type Props = {}
 
-const notification = (props: Props) => {
+const Notification = (props: Props) => {
   return (
-    <div>notification component rendered</div>
+    <div>Notification component rendered</div>
   )
 }
 
-export default notification
+export default Notification

@@ -8,7 +8,7 @@ type Props = {
     setPage:Dispatch<SetStateAction<Number>>,
 }
 
-const dashboadLayout = ({children,page,setPage}: Props) => {
+const DashboardLayout = ({children,page,setPage}: Props) => {
   return (
     <MobileContainer>
         <Header page={page}/>
@@ -20,4 +20,4 @@ const dashboadLayout = ({children,page,setPage}: Props) => {
   )
 }
 
-export default dashboadLayout
+export default DashboardLayout

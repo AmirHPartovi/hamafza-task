@@ -2,10 +2,10 @@ import React from 'react'
 
 type Props = {}
 
-const add = (props: Props) => {
+const Add = (props: Props) => {
   return (
-    <div>add component rendered</div>
+    <div>Add component rendered</div>
   )
 }
 
-export default add
+export default Add

@@ -2,10 +2,10 @@ import React from 'react'
 
 type Props = {}
 
-const tasks = (props: Props) => {
+const Tasks = (props: Props) => {
   return (
-    <div>tasks component rendered</div>
+    <div>Tasks component rendered</div>
   )
 }
 
-export default tasks
+export default Tasks

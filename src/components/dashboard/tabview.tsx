@@ -11,7 +11,7 @@ type Props = {
     setPage:Dispatch<SetStateAction<Number>>,
 }
 
-const tabview = ({page,setPage}: Props) => {
+const Tabview = ({page,setPage}: Props) => {
     const tabs =[
         {
             id:0,
@@ -83,4 +83,4 @@ const tabview = ({page,setPage}: Props) => {
   )
 }
 
-export default tabview
+export default Tabview

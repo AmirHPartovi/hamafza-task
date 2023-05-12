@@ -2,10 +2,10 @@ import React from 'react'
 
 type Props = {}
 
-const agenda = (props: Props) => {
+const Agenda = (props: Props) => {
   return (
-    <div>agenda component rendered</div>
+    <div>Agenda component rendered</div>
   )
 }
 
-export default agenda
+export default Agenda
