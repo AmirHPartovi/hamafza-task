@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import ArrowLeftIcon from '../../../public/assets/icons/ArrowLeft.svg'
 import BurgerMenuIcon from '../../../public/assets/icons/BurgerMenu.svg'
 import { IconButton, Typography } from '@mui/material'
+import Link from 'next/link'
 type Props = {
     page:Number,
 }
@@ -44,9 +45,11 @@ const header = ({page}: Props) => {
     justifyContent={'space-between'}>
             <Grid
             item>
-                <IconButton>
-                    <ArrowLeftIcon/>
-                </IconButton>
+                <Link href={'../'}>
+                    <IconButton>
+                        <ArrowLeftIcon/>
+                    </IconButton>
+                </Link>
             </Grid>
             <Grid
             item>
